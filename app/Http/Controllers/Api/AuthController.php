@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
 {
-    //CREATE USER
+    //REGISTER
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
