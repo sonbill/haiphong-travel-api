@@ -17,8 +17,9 @@ use App\Http\Controllers\Api\AuthController;
 
 Route::middleware('auth:sanctum')->group(function () {
     // LOGIN
-    Route::get('user', [AuthController::class, 'user'])->middleware('isAdmin');
-    // return $request->user();
+    Route::middleware(['isAdmin'])->group(function () {
+        Route::get('user', [AuthController::class, 'user']);
+    });
 });
 
 

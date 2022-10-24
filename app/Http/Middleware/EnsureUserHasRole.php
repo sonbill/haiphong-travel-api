@@ -16,7 +16,7 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->user()->role == 0) {
+        if (!$request->user()->role == 1) {
             return response()->json(
                 [
                     'message' => 'You are not admin',
